@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>leisu · 简洁产品引导</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: linear-gradient(145deg, #fce6c5 0%, #fad6a0 30%, #f7c489 70%, #efb576 100%);
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+  }
+  .card {
+    max-width: 800px;
+    width: 100%;
+    background: #fffcf8;
+    border-radius: 36px;
+    box-shadow: 0 20px 40px -12px rgba(140, 80, 20, 0.25), 0 8px 16px rgba(0,0,0,0.04);
+    padding: 2.8rem 3rem;
+    transition: box-shadow 0.2s ease;
+    backdrop-filter: blur(2px);
+  }
+  h1 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #3a2a1a;
+    margin-bottom: 0.25rem;
+    line-height: 1.1;
+  }
+  .subhead {
+    font-size: 1.15rem;
+    color: #7a6247;
+    margin-bottom: 2rem;
+    border-left: 4px solid #e5b47c;
+    padding-left: 1rem;
+    font-weight: 400;
+  }
+  .hero-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #2e241b;
+    margin-bottom: 1.5rem;
+  }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.2rem;
+    margin: 2rem 0 2.2rem;
+  }
+  .feature-item {
+    background: #f5ede4;
+    padding: 1.2rem 1rem;
+    border-radius: 24px;
+    box-shadow: inset 0 1px 3px rgba(255,245,235,0.8), 0 4px 8px rgba(100, 60, 20, 0.06);
+    transition: transform 0.1s ease, background 0.1s;
+  }
+  .feature-item:hover {
+    background: #efe3d4;
+  }
+  .feature-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #4d3520;
+    margin-bottom: 0.2rem;
+  }
+  .feature-item p {
+    font-size: 0.95rem;
+    color: #5f4a33;
+    line-height: 1.55;
+  }
+  .usage-suggestion {
+    background: #f3e7db;
+    border-radius: 28px;
+    padding: 1.4rem 1.8rem;
+    margin: 2rem 0 1.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.6rem 0.8rem;
+  }
+  .usage-suggestion .label {
+    font-weight: 500;
+    color: #5b3e26;
+    background: #fcf3e9;
+    padding: 0.2rem 1rem;
+    border-radius: 40px;
+    font-size: 0.9rem;
+  }
+  .usage-suggestion .desc {
+    font-size: 1rem;
+    color: #2f231b;
+    line-height: 1.6;
+    flex: 1;
+  }
+  .faq-mini {
+    margin: 2rem 0 1.8rem;
+  }
+  .faq-mini details {
+    border-bottom: 1px solid #ebdbcd;
+    padding: 0.75rem 0;
+  }
+  .faq-mini details:first-of-type {
+    border-top: 1px solid #ebdbcd;
+  }
+  .faq-mini summary {
+    font-weight: 500;
+    color: #4f3a28;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.15rem 0;
+    transition: color 0.1s;
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  .faq-mini summary::-webkit-details-marker { display: none; }
+  .faq-mini summary::before {
+    content: "▸";
+    display: inline-block;
+    margin-right: 0.6rem;
+    color: #b6895e;
+    transition: transform 0.2s;
+    font-size: 1.2rem;
+  }
+  .faq-mini details[open] summary::before {
+    transform: rotate(90deg);
+  }
+  .faq-mini .answer {
+    padding: 0.6rem 0 0.2rem 1.6rem;
+    color: #3d2d1f;
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+  .inline-link {
+    color: #7f592d;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 2px solid #e2c4a6;
+    transition: border-color 0.15s, color 0.15s;
+    padding-bottom: 0.1rem;
+  }
+  .inline-link:hover {
+    border-bottom-color: #a77c4f;
+    color: #4f331b;
+  }
+  .footnote {
+    margin-top: 2.2rem;
+    font-size: 0.9rem;
+    color: #7f6a55;
+    border-top: 1px solid #ebdbcd;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.8rem;
+  }
+  .footnote small {
+    opacity: 0.8;
+  }
+  @media (max-width: 550px) {
+    .card { padding: 2rem 1.5rem; }
+    h1 { font-size: 2rem; }
+    .usage-suggestion { flex-direction: column; align-items: stretch; gap: 0.3rem; }
+    .feature-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>leisu · 一眼识别</h1>
+  <div class="subhead">想快速了解一个网站做什么用？从产品逻辑、内容密度到适用场景，这里有一份清晰的速览。</div>
+
+  <div class="hero-text">
+    <p>如果你打开一个页面，心里总在问“这网站到底能帮我解决什么”，那很可能缺一份直白的摘要。<strong>leisu</strong> 就把这件事放在最前面：不需要翻遍导航栏，从第一屏就能判断是否和你的需求合拍。无论你是随手搜到的，还是朋友推荐来的，花 20 秒读一读，心里就有谱了。</p>
+    <p>它是一个有明确边界的工具型网站，不堆砌功能，不追求大而全。如果把它比作日常物件，更像一把趁手的开瓶器——不用的时候不占地，用的时候一秒钟上手。</p>
+  </div>
+
+  <div class="feature-grid">
+    <div class="feature-item">
+      <h3>轻量摘要</h3>
+      <p>首页直接点明核心用途，省去“再翻一页”的麻烦。</p>
+    </div>
+    <div class="feature-item">
+      <h3>场景自洽</h3>
+      <p>从信息查找、内容浏览到简单互动，每个模块都有实际落脚点。</p>
+    </div>
+    <div class="feature-item">
+      <h3>低调可靠</h3>
+      <p>不搞弹窗轰炸，不虚构数据，你看到的就是它认真做到的。</p>
+    </div>
+  </div>
+
+  <div class="usage-suggestion">
+    <span class="label">常见使用方式</span>
+    <span class="desc">想查某个方向的信息 → 在 <a href="https://china-m-leisu.com" class="inline-link">leisu</a> 内直接浏览分类或搜索关键词；如果只是随便逛逛，首页的热门条目通常能给你一点小启发。</span>
+  </div>
+
+  <div class="faq-mini">
+    <details>
+      <summary>和同类网站比，它有什么不一样？</summary>
+      <div class="answer">它没有试图覆盖所有领域，而是专注在少数几类内容上做深、做顺手。页面结构比较克制，没有多余的社交按钮或推荐流，阅读体验更安静。</div>
+    </details>
+    <details>
+      <summary>第一次访问，有什么需要注意的吗？</summary>
+      <div class="answer">不需要注册或登录就可以浏览大部分内容。部分功能可能需要基础账户，但流程很轻——邮箱加密码就够了，不会要求手机号或实名。</div>
+    </details>
+    <details>
+      <summary>内容更新频率怎么样？</summary>
+      <div class="answer">保持周更节奏，重点条目会随季节或热点微调。不追求日更导致的注水感，每条都经过整理，信息密度对得起你的阅读时间。</div>
+    </details>
+  </div>
+
+  <div class="footnote">
+    <span>© · 简单说明页 · 供参考</span>
+    <small>页面仅作介绍，不构成使用承诺，具体功能以实际站点为准。</small>
+  </div>
+</div>
+</body>
+</html>
