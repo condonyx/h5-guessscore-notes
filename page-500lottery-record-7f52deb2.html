@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>站点介绍 – 500彩票网官方 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f0f7fa;
+            color: #1e2b34;
+            line-height: 1.6;
+            padding: 1.5rem;
+        }
+
+        .page {
+            max-width: 960px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 30px rgba(0, 40, 50, 0.08);
+            overflow: hidden;
+            padding: 2rem 1.5rem 2.5rem;
+        }
+
+        /* 蓝绿色点缀体系 */
+        .accent-border {
+            border-left: 4px solid #2a9d8f;
+            padding-left: 1rem;
+        }
+
+        .badge {
+            background: #e0f2f0;
+            color: #0f5b54;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            padding: 0.2rem 0.7rem;
+            border-radius: 40px;
+            display: inline-block;
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 650;
+            color: #0c3d3a;
+            margin-top: 0.25rem;
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subhead {
+            font-size: 1.05rem;
+            color: #3b5f5a;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #d3e6e3;
+            padding-bottom: 1.2rem;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+
+        @media (min-width: 540px) {
+            .grid-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: #f8fdfc;
+            border-radius: 20px;
+            padding: 1.3rem 1.2rem;
+            box-shadow: 0 2px 6px rgba(30, 60, 60, 0.04);
+            transition: box-shadow 0.2s, transform 0.1s;
+            border: 1px solid #e2f0ed;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 14px rgba(42, 157, 143, 0.08);
+            transform: translateY(-2px);
+            border-color: #b7dbd4;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0b4b44;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .card h3::before {
+            content: "▹";
+            color: #2a9d8f;
+            font-weight: 400;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #2a4040;
+            margin-bottom: 0.1rem;
+        }
+
+        .highlight-banner {
+            background: linear-gradient(105deg, #e5f5f2 0%, #d0ece6 100%);
+            border-radius: 18px;
+            padding: 1.4rem 1.4rem;
+            margin: 1.8rem 0 1.2rem;
+        }
+
+        .highlight-banner p {
+            font-size: 1rem;
+            color: #083b36;
+            font-weight: 450;
+        }
+
+        .highlight-banner a {
+            color: #0a5f56;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 2px;
+            text-decoration-color: #82c2b7;
+            font-weight: 500;
+        }
+
+        .highlight-banner a:hover {
+            color: #043d37;
+            text-decoration-color: #2a9d8f;
+        }
+
+        .scenario-list {
+            margin: 1.8rem 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .scenario-list li {
+            position: relative;
+            padding: 0.6rem 0 0.6rem 1.8rem;
+            border-bottom: 1px dashed #d5e6e2;
+            font-size: 0.98rem;
+            color: #1c3f3b;
+        }
+
+        .scenario-list li::before {
+            content: "•";
+            color: #2a9d8f;
+            font-weight: bold;
+            font-size: 1.3rem;
+            position: absolute;
+            left: 0.2rem;
+            top: 0.4rem;
+        }
+
+        .faq-mini {
+            margin-top: 2.4rem;
+            padding: 1.2rem 0 0.2rem;
+            border-top: 1px solid #d5e8e4;
+        }
+
+        .faq-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #07413c;
+            font-size: 0.98rem;
+        }
+
+        .faq-q::before {
+            content: "Q: ";
+            color: #2a9d8f;
+        }
+
+        .faq-a {
+            color: #2d4d49;
+            font-size: 0.93rem;
+            padding-left: 0.3rem;
+        }
+
+        .footnote {
+            margin-top: 2.4rem;
+            font-size: 0.85rem;
+            color: #5c7974;
+            text-align: center;
+            border-top: 1px solid #dcebe8;
+            padding-top: 1.6rem;
+        }
+
+        .inline-link {
+            color: #1c7b6f;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .inline-link:hover {
+            color: #0b5349;
+        }
+
+        @media (max-width: 420px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+            .page {
+                padding: 1.5rem 1rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 标题区 -->
+    <h1>500彩票网官方 · 产品说明</h1>
+    <div class="subhead accent-border">
+        从站点介绍与可信说明的视角，了解这一平台定位与使用脉络。
+    </div>
+
+    <!-- 摘要 / 介绍段落 -->
+    <p style="margin-bottom: 1.4rem; font-size: 1.02rem;">
+        <span class="badge">站点概览</span> 
+        <strong>500彩票网官方</strong> 是国内较早专注于彩票资讯与数据服务的平台之一，提供彩种走势、开奖结果、历史数据以及相关分析工具。站点内容围绕彩市公开信息展开，适合对数字游戏或概率模型有理性兴趣的用户作为参考。需要明确的是，彩票本质为概率游戏，平台本身不参与任何销售或返奖，用户应当基于自身判断做出选择。
+    </p>
+
+    <!-- 网格卡片：亮点 + 使用建议 -->
+    <div class="grid-cards">
+        <div class="card">
+            <h3>数据覆盖面</h3>
+            <p>双色球、大乐透、福彩3D、排列三、七乐彩等多个彩种的历史号码与走势图，数据更新及时，方便横向比较。</p>
+        </div>
+        <div class="card">
+            <h3>分析辅助模块</h3>
+            <p>提供冷热号统计、遗漏值、区间分布等基础分析视图，帮助用户从统计角度观察号码特征，而非预测结果。</p>
+        </div>
+        <div class="card">
+            <h3>接口稳定度</h3>
+            <p>开奖结果同步自官方渠道，延迟控制在合理范围，站点长期保持可用，用户可将其作为一手信息查询入口。</p>
+        </div>
+        <div class="card">
+            <h3>使用建议</h3>
+            <p>建议将平台作为数据参考站，结合个人对概率的理解进行复盘，不宜以短期走势作为投注依据，保持理性参与。</p>
+        </div>
+    </div>
+
+    <!-- 可信但克制的访问说明 + 链接自然嵌入 -->
+    <div class="highlight-banner">
+        <p>
+            ⚡ 若你希望查阅开奖走势或数据统计，可直接通过 
+            <a href="https://page-500lottery.com">500彩票网官方</a> 
+            获取信息。该站点本身不推荐任何购彩行为，所有内容仅基于公开数据整理，用户需自行承担判断责任。
+        </p>
+    </div>
+
+    <!-- 场景使用（使用建议的延伸） -->
+    <h3 style="font-weight: 600; color: #07413c; margin: 1.2rem 0 0.6rem;">常见使用场景</h3>
+    <ul class="scenario-list">
+        <li><strong>历史复盘</strong> — 回顾往期开奖号码，观察区间冷热趋势，辅助自己的选号思路。</li>
+        <li><strong>遗漏统计</strong> — 查看各个号码的遗漏期数与回补情况，作为概率参考，而非绝对规律。</li>
+        <li><strong>多维度对比</strong> — 同时对比不同彩种的数据表现，理解各自游戏规则下的概率差异。</li>
+        <li><strong>日常快查</strong> — 快速查询最新开奖号码，无需注册或登录，降低信息获取门槛。</li>
+    </ul>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+        <div class="faq-item">
+            <span class="faq-q">这个平台是否保证中奖？</span>
+            <span class="faq-a">不保证。任何宣称“稳中”的彩票站点均存在误导。平台仅展示历史数据，不预测未来开奖结果。</span>
+        </div>
+        <div class="faq-item">
+            <span class="faq-q">数据来源是否可靠？</span>
+            <span class="faq-a">数据源自国家官方彩票开奖公告，但与官方存在极短的时间差，建议以权威媒体或彩票中心发布为准。</span>
+        </div>
+        <div class="faq-item">
+            <span class="faq-q">是否需要付费或注册？</span>
+            <span class="faq-a">基础数据查询完全免费，无需注册。部分高级统计工具可能需登录，但非强制使用。</span>
+        </div>
+        <div class="faq-item" style="margin-bottom: 0.2rem;">
+            <span class="faq-q">如何理性使用？</span>
+            <span class="faq-a">将彩票视为公益参与或娱乐消遣，控制投入金额，拒绝倍投或借贷。数据只是工具，不应成为押注依据。</span>
+        </div>
+    </div>
+
+    <!-- 尾部说明 -->
+    <div class="footnote">
+        <span>内容基于公开信息整理 · 不构成任何投资或购买建议</span><br>
+        <span style="display: inline-block; margin-top: 0.5rem;">© 介绍页 · 仅用于说明</span>
+    </div>
+</div>
+</body>
+</html>
